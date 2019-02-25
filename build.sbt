@@ -9,8 +9,15 @@ ThisBuild / organizationName := "example"
 lazy val root = (project in file("."))
   .settings(
     name := "hello-grpc-scala",
-    libraryDependencies += scalaTest % Test
+    libraryDependencies ++= Seq(
+      scalaTest % Test,
+      // @see https://xuwei-k.github.io/scala-protobuf-docs/grpc.html
+      "com.thesamet.scalapb" %% "scalapb-runtime-grpc" % scalapb.compiler.Version.scalapbVersion,
+      "io.grpc" % "grpc-all" % scalapb.compiler.Version.grpcJavaVersion
+    )
   )
+
+
 
 // @see https://xuwei-k.github.io/scala-protobuf-docs/setup.html
 PB.targets in Compile := Seq(

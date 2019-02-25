@@ -24,3 +24,7 @@ message RecommendRequest {
 message RecommendResponse {
     repeated Beer beer = 1;
 }
+
+service BeerRecommendService {
+    rpc Recommend(RecommendRequest) returns (RecommendResponse) {}
+}
