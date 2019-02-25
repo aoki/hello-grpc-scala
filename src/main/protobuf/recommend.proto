@@ -1,0 +1,26 @@
+syntax = "proto3";
+
+option java_package = "hello.beer";
+
+enum BeerStyle {
+    UNKNOWN = 0;
+    IPA = 1;
+    PALE_ALE = 2;
+    PILSNER = 3;
+    WEIZEN = 4;
+}
+
+message Beer {
+    string name = 1;
+    BeerStyle style = 2;
+    repeated string hop = 3;
+}
+
+message RecommendRequest {
+    BeerStyle beer_style = 1;
+    string brewer = 2;
+}
+
+message RecommendResponse {
+    repeated Beer beer = 1;
+}
