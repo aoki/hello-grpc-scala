@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+option java_package = "hello";
+
+enum Message {
+    HELLO = 0;
+    WORLD = 1;
+}
+
+message HelloService {
+    Message message_type = 1;
+    string message = 2;
+}
