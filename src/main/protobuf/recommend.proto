@@ -17,8 +17,7 @@ message Beer {
 }
 
 message RecommendRequest {
-    BeerStyle beer_style = 1;
-    string brewer = 2;
+    string brewer = 1;
 }
 
 message RecommendResponse {

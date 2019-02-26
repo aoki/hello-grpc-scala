@@ -13,7 +13,8 @@ lazy val root = (project in file("."))
       scalaTest % Test,
       // @see https://xuwei-k.github.io/scala-protobuf-docs/grpc.html
       "com.thesamet.scalapb" %% "scalapb-runtime-grpc" % scalapb.compiler.Version.scalapbVersion,
-      "io.grpc" % "grpc-all" % scalapb.compiler.Version.grpcJavaVersion
+      "io.grpc" % "grpc-all" % scalapb.compiler.Version.grpcJavaVersion,
+      "io.grpc" % "grpc-services" % scalapb.compiler.Version.grpcJavaVersion
     )
   )
 
