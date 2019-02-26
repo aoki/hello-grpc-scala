@@ -22,6 +22,7 @@ lazy val root = (project in file("."))
 // @see https://xuwei-k.github.io/scala-protobuf-docs/setup.html
 PB.targets in Compile := Seq(
   protoc_lint.ProtocLint() -> (sourceManaged in Compile).value,
-  PB.gens.java(protobufVersion) -> ((sourceManaged in Compile).value / "protobuf-java"),
-  scalapb.gen(javaConversions=true) -> ((sourceManaged in Compile).value / "protobuf-scala")
+//  PB.gens.java(protobufVersion) -> ((sourceManaged in Compile).value / "protobuf-java"),
+//  scalapb.gen(javaConversions=true) -> ((sourceManaged in Compile).value / "protobuf-scala")
+  scalapb.gen(javaConversions=false) -> ((sourceManaged in Compile).value / "protobuf-scala")
 )
