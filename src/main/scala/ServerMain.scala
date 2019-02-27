@@ -2,10 +2,10 @@ import hello.beer.recommend.BeerRecommendServiceGrpc
 import io.grpc.ServerBuilder
 import io.grpc.protobuf.services.ProtoReflectionService
 
-import scala.concurrent.ExecutionContext
+import scala.concurrent.{ExecutionContext, ExecutionContextExecutor}
 
 object ServerMain {
-  val executionContext = ExecutionContext.global
+  val executionContext: ExecutionContextExecutor = ExecutionContext.global
   val port = 50051
 
   def main(args: Array[String]) = {
@@ -14,7 +14,7 @@ object ServerMain {
       .addService(ProtoReflectionService.newInstance())
       .build()
       .start()
-    server.awaitTermination()
+      .awaitTermination()
   }
 
 }
